@@ -3,10 +3,10 @@ services:
   apuestas-api:
     build: .
     environment:
-      DBServer: host.docker.internal
+      DBServer: project-database-1.ctcido7r6byj.us-east-1.rds.amazonaws.com
       DBPort: "5432"
       DBUser: "postgres"
-      Password: "moki-moki24"
+      Password: "xMhAHe4oG7TJ0KWzAzZe"
       Database: "Lotto"
     ports:
-      - "8080:80"
+      - "80:80"

@@ -38,10 +38,10 @@ namespace ApuestasApi
             //Scaffold-DbContext "{ConnectionString}" Npgsql.EntityFrameworkCore.PostgreSQL -OutputDir Models
             //Para importar modelos desde la base de datos
 
-            var server = Configuration["DBServer"] ?? "localhost";
+            var server = Configuration["DBServer"] ?? "project-database-1.ctcido7r6byj.us-east-1.rds.amazonaws.com";
             var port = Configuration["DBPort"] ?? "5432";
             var user = Configuration["DBUser"] ?? "postgres";
-            var password = Configuration["Password"] ?? "moki-moki24";
+            var password = Configuration["Password"] ?? "xMhAHe4oG7TJ0KWzAzZe";
             var database = Configuration["Database"] ?? "Lotto";
             services.AddDbContext<LottoContext>(options =>
                 options.UseNpgsql($"Server={server};Database={database};Port={port};UserId={user};Password={password}")
@@ -57,8 +57,8 @@ namespace ApuestasApi
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = "Animalitos.com",
                     ValidAudience = "Animalitos.com",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Secret_Key"])),
-                    //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("KSAJDFLKSDAJNVKJASNAWPWORQIRPOWEQ")),
+                    //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Secret_Key"])),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("KSAJDFLKSDAJNVKJASNAWPWORQIRPOWEQ")),
                     ClockSkew = TimeSpan.Zero
                 });
             services.AddScoped<IEstatusRepository, EstatusRepository>();
