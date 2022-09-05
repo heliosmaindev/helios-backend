@@ -57,8 +57,8 @@ namespace ApuestasApi
                     ValidateIssuerSigningKey = true,
                     ValidIssuer = "Animalitos.com",
                     ValidAudience = "Animalitos.com",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Secret_Key"])),
-                    //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("KSAJDFLKSDAJNVKJASNAWPWORQIRPOWEQ")),
+                    //IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Secret_Key"])),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("KSAJDFLKSDAJNVKJASNAWPWORQIRPOWEQ")),
                     ClockSkew = TimeSpan.Zero
                 });
             services.AddScoped<IEstatusRepository, EstatusRepository>();
